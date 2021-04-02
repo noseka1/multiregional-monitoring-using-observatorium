@@ -1,0 +1,41 @@
+varReference:
+- kind: Observatorium
+  path: spec/api/image
+- kind: Observatorium
+  path: spec/compact/image
+- kind: Observatorium
+  path: spec/query/image
+- kind: Observatorium
+  path: spec/queryFrontend/image
+- kind: Observatorium
+  path: spec/receivers/image
+- kind: Observatorium
+  path: spec/rule/image
+- kind: Observatorium
+  path: spec/rule/reloaderImage
+- kind: Observatorium
+  path: spec/store/cache/exporterImage
+- kind: Observatorium
+  path: spec/store/cache/image
+- kind: Observatorium
+  path: spec/store/image
+- kind: Observatorium
+  path: spec/thanosReceiveController/image
+
+nameReference:
+- kind: Secret
+  fieldSpecs:
+  - kind: Observatorium
+    path: spec/api/tenants/mTLS/secretName
+- kind: Secret
+  fieldSpecs:
+  - kind: Observatorium
+    path: spec/api/tls/secretName
+- kind: Secret
+  fieldSpecs:
+  - kind: Observatorium
+    path: spec/objectStorageConfig/thanos/name
+- kind: ConfigMap
+  fieldSpecs:
+  - kind: Observatorium
+    path: spec/rule/rulesConfig/name

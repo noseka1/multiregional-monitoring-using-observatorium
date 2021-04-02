@@ -1,0 +1,178 @@
+apiVersion: core.observatorium.io/v1alpha1
+kind: Observatorium
+metadata:
+  name: observatorium
+spec:
+  api:
+    image: $(image_observatorium)
+    rbac:
+      roleBindings:
+      - name: read-only-metrics
+        roles:
+        - read-only-metrics
+        subjects:
+        - kind: user
+          name: grafana
+      - name: write-only-metrics
+        roles:
+        - write-only-metrics
+        subjects:
+        - kind: group
+          name: acm
+      roles:
+      - name: read-only-metrics
+        permissions:
+        - read
+        resources:
+        - metrics
+        tenants:
+        - default
+      - name: write-only-metrics
+        permissions:
+        - write
+        resources:
+        - metrics
+        tenants:
+        - default
+    replicas: 1
+    resources:
+      requests:
+        cpu: 20m
+        memory: 128Mi
+    tenants:
+    - id: 57236109-c0e3-4b53-8700-30232dbb073d
+      mTLS:
+        caKey: ca.crt
+        secretName: tenant-default
+      name: default
+    tls:
+      caKey: ca.crt
+      certKey: tls.crt
+      keyKey: tls.key
+      secretName: observatorium-api-certs
+      serverName: observatorium-api
+    #version: master-2020-09-18-v0.1.1-148-gb105421
+  compact:
+    image: $(image_thanos)
+    replicas: 1
+    resources:
+      requests:
+        cpu: 100m
+        memory: 512Mi
+    retentionResolution1h: 30d
+    retentionResolution5m: 14d
+    retentionResolutionRaw: 5d
+    #version: master-2020-08-12-70f89d83
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+        #storageClassName: gp2
+  hashrings:
+  - hashring: default
+    tenants:
+    - 57236109-c0e3-4b53-8700-30232dbb073d
+  objectStorageConfig:
+    thanos:
+      key: thanos.yaml
+      name: thanos-object-storage
+  query:
+    image: $(image_thanos)
+    replicas: 1
+    resources:
+      requests:
+        cpu: 300m
+        memory: 1Gi
+    #version: master-2020-08-12-70f89d83
+  queryFrontend:
+    image: $(image_thanos)
+    replicas: 1
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+    #version: master-2020-08-12-70f89d83
+  receivers:
+    image: $(image_thanos)
+    replicas: 1
+    replicationFactor: 1
+    resources:
+      requests:
+        cpu: 300m
+        memory: 512Mi
+    #version: master-2020-08-12-70f89d83
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+        #storageClassName: gp2
+  rule:
+    alertmanagersURL:
+    - http://alertmanager:9093
+    image: $(image_thanos)
+    reloaderImage: $(image_prometheus-config-reloader)
+    reloaderResources:
+      requests:
+        cpu: 4m
+        memory: 25Mi
+    replicas: 1
+    resources:
+      requests:
+        cpu: 50m
+        memory: 512Mi
+    rulesConfig:
+    - key: default_rules.yaml
+      name: thanos-ruler-default-rules
+    #version: master-2020-08-12-70f89d83
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+        #storageClassName: gp2
+  store:
+    cache:
+      exporterImage: $(image_memcached_exporter)
+      exporterResources:
+        requests:
+          cpu: 5m
+          memory: 50Mi
+      #exporterVersion: v0.8.0
+      image: $(image_memcached)
+      memoryLimitMb: 1024
+      replicas: 1
+      resources:
+        requests:
+          cpu: 45m
+          memory: 128Mi
+      #version: 1.6.3-alpine
+    image: $(image_thanos)
+    resources:
+      requests:
+        cpu: 100m
+        memory: 1Gi
+    shards: 1
+    #version: master-2020-08-12-70f89d83
+    volumeClaimTemplate:
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+        #storageClassName: gp2
+  thanosReceiveController:
+    image: $(image_thanos_receive_controller)
+    resources:
+      requests:
+        cpu: 4m
+        memory: 32Mi
+    #version: master-2021-02-08-36d6090

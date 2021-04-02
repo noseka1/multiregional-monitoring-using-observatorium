@@ -1,0 +1,52 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: observatorium
+
+resources:
+- mch-image-manifest-cm.yaml
+- observatorium-api-route.yaml
+- observatorium-observatorium.yaml
+
+configMapGenerator:
+- files:
+  - default_rules.yaml=conf/default_rules.yaml
+  name: thanos-ruler-default-rules
+
+secretGenerator:
+- files:
+  # REPLACE
+  - ca.crt=conf/tenant-default.crt.pem
+  name: tenant-default
+- files:
+  # REPLACE
+  - ca.crt=conf/api-ca.crt.pem
+  - tls.crt=conf/api.crt.pem
+  - tls.key=conf/api.key.pem
+  name: observatorium-api-certs
+- files:
+  - thanos.yaml=conf/thanos.yaml
+  name: thanos-object-storage
+
+vars:
+- name: image_observatorium
+  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  fieldref: { fieldpath: data.observatorium }
+- name: image_thanos
+  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  fieldref: { fieldpath: data.thanos }
+- name: image_prometheus-config-reloader
+  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  fieldref: { fieldpath: data.prometheus-config-reloader }
+- name: image_memcached_exporter
+  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  fieldref: { fieldpath: data.memcached_exporter }
+- name: image_memcached
+  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  fieldref: { fieldpath: data.memcached }
+- name: image_thanos_receive_controller
+  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  fieldref: { fieldpath: data.thanos_receive_controller }
+
+configurations:
+- kustomizeconfig/configuration.yaml

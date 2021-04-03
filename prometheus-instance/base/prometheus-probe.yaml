@@ -1,0 +1,9 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Probe
+metadata:
+  name: prometheus-probe
+spec:
+  targets:
+    staticConfig:
+      targets:
+      - http://ocalhost:9100

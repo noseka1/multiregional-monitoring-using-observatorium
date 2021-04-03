@@ -5,3 +5,4 @@ namespace: observatorium
 
 resources:
 - prometheus-prometheus.yaml
+- prometheus-probe.yaml

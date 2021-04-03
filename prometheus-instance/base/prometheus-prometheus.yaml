@@ -5,3 +5,5 @@ metadata:
 spec:
   replicas: 1
   serviceAccountName: prometheus-k8s
+  probeSelector: {}
+  logLevel: debug

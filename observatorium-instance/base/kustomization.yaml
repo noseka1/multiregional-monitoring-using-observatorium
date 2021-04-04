@@ -20,9 +20,9 @@ secretGenerator:
   name: tenant-default
 - files:
   # REPLACE
-  - ca.crt=conf/api-ca.crt.pem
-  - tls.crt=conf/api.crt.pem
-  - tls.key=conf/api.key.pem
+  - ca.crt=conf/observatorium-api.ca.crt.pem
+  - tls.crt=conf/observatorium-api.crt.pem
+  - tls.key=conf/observatorium-api.key.pem
   name: observatorium-api-certs
 - files:
   - thanos.yaml=conf/thanos.yaml

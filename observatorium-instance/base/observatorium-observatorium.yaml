@@ -18,7 +18,7 @@ spec:
         - write-only-metrics
         subjects:
         - kind: group
-          name: acm
+          name: prometheuses
       roles:
       - name: read-only-metrics
         permissions:

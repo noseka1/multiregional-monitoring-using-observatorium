@@ -5,6 +5,9 @@ metadata:
 spec:
   replicas: 1
   serviceAccountName: prometheus-k8s
+  serviceMonitorSelector:
+    matchLabels:
+      app: prometheus-operated
   remoteWrite:
   # REPLACE
   - url: https://observatorium-observatorium-api.observatorium.svc.cluster.local:8080/api/metrics/v1/default/api/v1/receive

@@ -23,7 +23,6 @@ secretGenerator:
 
 resources:
 - prometheus-prometheus.yaml
-- prometheus-operated-servicemonitor.yaml
 
 configurations:
 - kustomizeconfig/configuration.yaml

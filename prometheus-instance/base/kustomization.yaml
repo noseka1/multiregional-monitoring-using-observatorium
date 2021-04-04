@@ -17,7 +17,13 @@ secretGenerator:
   name: observatorium-api-server-certs
   options:
     disableNameSuffixHash: true
+- files:
+  - prometheus-additional-scrape-configs.yaml=conf/prometheus-additional-scrape-configs.yaml
+  name: prometheus-additional-scrape-configs
 
 resources:
 - prometheus-prometheus.yaml
 - prometheus-operated-servicemonitor.yaml
+
+configurations:
+- kustomizeconfig/configuration.yaml

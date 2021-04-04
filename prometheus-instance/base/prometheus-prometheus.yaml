@@ -19,4 +19,7 @@ spec:
   secrets:
   - prometheus-client-certs
   - observatorium-api-server-certs
+  additionalScrapeConfigs:
+    name: prometheus-additional-scrape-configs
+    key: prometheus-additional-scrape-configs.yaml
   logLevel: debug

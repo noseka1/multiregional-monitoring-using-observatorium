@@ -8,4 +8,15 @@ spec:
   serviceMonitorSelector:
     matchLabels:
       app: prometheus-operated
+  remoteWrite:
+  # REPLACE
+  - url: https://observatorium-observatorium-api.observatorium.svc.cluster.local:8080/api/metrics/v1/default/api/v1/receive
+    tlsConfig:
+      caFile: /etc/prometheus/secrets/observatorium-api-server-certs/ca.crt
+      certFile: /etc/prometheus/secrets/prometheus-client-certs/tls.crt
+      keyFile: /etc/prometheus/secrets/prometheus-client-certs/tls.key
+      #insecureSkipVerify: true
+  secrets:
+  - prometheus-client-certs
+  - observatorium-api-server-certs
   logLevel: debug

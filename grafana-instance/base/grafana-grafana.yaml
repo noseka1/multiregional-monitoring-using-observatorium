@@ -8,11 +8,14 @@ spec:
       disable_login_form: true
       disable_signout_menu: true
     auth.basic:
-      enabled: false
+      # Must be enabled. Operator uses basic auth when connecting to Grafana APIs.
+      enabled: true
     auth.proxy:
       auto_sign_up: true
       enabled: true
       header_name: X-Forwarded-User
+    auth.anonymous:
+      enable: false
     log:
       level: warn
       mode: console
@@ -21,6 +24,7 @@ spec:
     # https://github.com/integr8ly/grafana-operator/blob/master/deploy/examples/oauth/README.md
     - args:
         - '-provider=openshift'
+        - '-pass-basic-auth=false'
         - '-https-address=:9091'
         - '-http-address='
         - '-email-domain=*'

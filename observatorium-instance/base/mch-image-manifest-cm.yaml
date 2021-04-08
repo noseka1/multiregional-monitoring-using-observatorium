@@ -1,4 +1,4 @@
-# Get the configmap that matches your version of RHCAM, for example:
+# Get the configmap that matches your version of RHACM, for example:
 # oc get cm --namespace open-cluster-management mch-image-manifest-2.2.1 --output yaml
 apiVersion: v1
 kind: ConfigMap

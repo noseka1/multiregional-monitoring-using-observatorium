@@ -8,10 +8,86 @@ spec:
   - name: Prometheus
     type: prometheus
     access: proxy
-    url: http://prometheus-operated:9090
+    url: https://observatorium-observatorium-api.observatorium.svc.cluster.local:8080/api/metrics/v1/default
     isDefault: true
     version: 1
     editable: true
     jsonData:
-      tlsSkipVerify: true
+      tlsSkipVerify: false
       timeInterval: "5s"
+      tlsAuth: true
+      tlsAuthWithCACert: true
+    secureJsonData:
+      # observatorium-api.ca.crt.pem
+      tlsCACert: |
+        -----BEGIN CERTIFICATE-----
+        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
+        R6NA
+        -----END CERTIFICATE-----
+      # Subject: OU = grafanas, CN = grafana-1
+      tlsClientCert: |
+        -----BEGIN CERTIFICATE-----
+        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
+        -----END CERTIFICATE-----
+      tlsClientKey: |
+        -----BEGIN PRIVATE KEY-----
+        REPLACE
+        -----END PRIVATE KEY-----

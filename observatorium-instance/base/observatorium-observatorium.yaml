@@ -11,8 +11,8 @@ spec:
         roles:
         - read-only-metrics
         subjects:
-        - kind: user
-          name: grafana
+        - kind: group
+          name: grafanas
       - name: write-only-metrics
         roles:
         - write-only-metrics

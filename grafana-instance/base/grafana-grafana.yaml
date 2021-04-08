@@ -19,7 +19,7 @@ spec:
     users:
       auto_assign_org_role: Admin
     log:
-      level: warn
+      level: debug
       mode: console
   containers:
     # Grafana oauth proxy configuration based on:

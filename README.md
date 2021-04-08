@@ -29,3 +29,11 @@ $ oc expose svc prometheus-operated
 ```
 $ oc expose svc observatorium-thanos-query --port http
 ```
+
+```
+$ oc apply --kustomize grafana-operator/base
+```
+
+```
+$ oc apply --kustomize grafana-instance/base
+```

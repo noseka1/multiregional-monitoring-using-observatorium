@@ -18,6 +18,8 @@ resources:
 - grafana-proxy-clusterrolebinding.yaml
 - grafana-proxy-clusterrole.yaml
 - ocp-injected-certs-cm.yaml
+- prometheus-grafanadatasource.yaml
+- prometheus-grafanadashboard.yaml
 
 configurations:
 - kustomizeconfig/configuration.yaml

@@ -16,6 +16,8 @@ spec:
       header_name: X-Forwarded-User
     auth.anonymous:
       enable: false
+    users:
+      auto_assign_org_role: Admin
     log:
       level: warn
       mode: console

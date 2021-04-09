@@ -1,10 +1,7 @@
 type: s3
 config:
-  # REPLACE
-  bucket: mybucket-2
-  endpoint: minio-minio.apps.cluster-4413.4413.example.opentlc.com
-  access_key: admin
-  secret_key: REPLACE
-  insecure: false
-  http_config:
-    insecure_skip_verify: true
+  bucket: thanos
+  endpoint: minio.observatorium.svc.cluster.local:9000
+  access_key: minio
+  secret_key: minio123
+  insecure: true

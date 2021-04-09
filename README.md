@@ -4,6 +4,10 @@
 $ oc apply --kustomize observatorium-namespace/base
 ```
 
+```
+$ oc apply --kustomize minio/base
+```
+
 Search for REPLACE string and customize the manifests before deploying.
 
 ```

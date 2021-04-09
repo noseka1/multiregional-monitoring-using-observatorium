@@ -3,9 +3,21 @@ kind: Kustomization
 
 namespace: observatorium
 
+vars:
+- fieldref:
+    fieldPath: metadata.namespace
+  name: NAMESPACE
+  objref:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: observatorium-operator
+
 resources:
 - observatorium-operator-clusterrolebinding.yaml
 - observatorium-operator-clusterrole.yaml
 - observatorium-operator-deploy.yaml
 - observatorium-operator-sa.yaml
 - observatoria.core.observatorium.io-crd.yaml
+
+configurations:
+- kustomizeconfig/configuration.yaml

@@ -22,7 +22,7 @@ spec:
       - name: observatorium-operator
         image: quay.io/observatorium/observatorium-operator:master-2021-04-07-08f589b
         args:
-          - "--log-level=debug"
+        - "--log-level=debug"
         resources:
           limits:
             cpu: 100m

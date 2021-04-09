@@ -20,8 +20,7 @@ spec:
       serviceAccountName: observatorium-operator
       containers:
       - name: observatorium-operator
-        image: quay.io/observatorium/observatorium-operator:latest
-        imagePullPolicy: IfNotPresent
+        image: quay.io/observatorium/observatorium-operator:master-2021-04-07-08f589b
         args:
           - "--log-level=debug"
         resources:
@@ -31,4 +30,3 @@ spec:
           requests:
             cpu: 100m
             memory: 600Mi
-      terminationGracePeriodSeconds: 10

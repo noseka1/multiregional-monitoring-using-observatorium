@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: observatorium
+
+resources:
+- observatorium-operator-clusterrolebinding.yaml
+- observatorium-operator-clusterrole.yaml
+- observatorium-operator-deploy.yaml
+- observatorium-operator-sa.yaml
+- observatoria.core.observatorium.io-crd.yaml

@@ -9,7 +9,7 @@ spec:
     matchLabels:
       app: prometheus-operated
   remoteWrite:
-  # REPLACE
+  # REPLACE_ME
   - url: https://observatorium-observatorium-api.observatorium.svc.cluster.local:8080/api/metrics/v1/default/api/v1/receive
     tlsConfig:
       caFile: /etc/prometheus/secrets/observatorium-api-server-certs/ca.crt

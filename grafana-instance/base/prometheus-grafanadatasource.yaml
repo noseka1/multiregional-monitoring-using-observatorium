@@ -89,5 +89,5 @@ spec:
         -----END CERTIFICATE-----
       tlsClientKey: |
         -----BEGIN PRIVATE KEY-----
-        REPLACE
+        REPLACE_ME
         -----END PRIVATE KEY-----

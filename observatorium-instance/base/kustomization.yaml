@@ -15,11 +15,11 @@ configMapGenerator:
 
 secretGenerator:
 - files:
-  # REPLACE
+  # REPLACE_ME
   - ca.crt=conf/tenant-default.crt.pem
   name: tenant-default
 - files:
-  # REPLACE
+  # REPLACE_ME
   - ca.crt=conf/observatorium-api.ca.crt.pem
   - tls.crt=conf/observatorium-api.crt.pem
   - tls.key=conf/observatorium-api.key.pem

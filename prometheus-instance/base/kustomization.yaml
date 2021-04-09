@@ -5,14 +5,14 @@ namespace: observatorium
 
 secretGenerator:
 - files:
-  # REPLACE
+  # REPLACE_ME
   - tls.crt=conf/prometheus.crt.pem
   - tls.key=conf/prometheus.key.pem
   name: prometheus-client-certs
   options:
     disableNameSuffixHash: true
 - files:
-  # REPLACE
+  # REPLACE_ME
   - ca.crt=conf/observatorium-api.ca.crt.pem
   name: observatorium-api-server-certs
   options:

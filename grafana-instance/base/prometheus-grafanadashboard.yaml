@@ -6,7 +6,6 @@ metadata:
     app: grafana
 spec:
   customFolderName: My Folder
-  url: https://grafana.com/api/dashboards/2/revisions/2/download
-  datasources:
-  - inputName: DS_PROMETHEUS
-    datasourceName: Prometheus
+  configMapRef:
+    name: prometheus-stats-dashboard
+    key: prometheus_stats.json

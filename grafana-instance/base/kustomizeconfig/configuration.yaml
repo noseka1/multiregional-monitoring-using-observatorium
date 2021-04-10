@@ -1,3 +1,9 @@
 varReference:
 - kind: ClusterRoleBinding
   path: subjects/namespace
+
+nameReference:
+- kind: ConfigMap
+  fieldSpecs:
+  - kind: GrafanaDashboard
+    path: spec/configMapRef/name

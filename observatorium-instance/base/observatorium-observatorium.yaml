@@ -138,6 +138,7 @@ spec:
           requests:
             storage: 10Gi
         #storageClassName: gp2
+  securityContext: {}
   store:
     cache:
       exporterImage: $(image_memcached_exporter)

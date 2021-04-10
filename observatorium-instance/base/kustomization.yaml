@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: observatorium
 
 resources:
-- mch-image-manifest-cm.yaml
+- image-manifest-cm.yaml
 - observatorium-api-route.yaml
 - observatorium-observatorium.yaml
 
@@ -30,22 +30,22 @@ secretGenerator:
 
 vars:
 - name: image_observatorium
-  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  objref: { kind: ConfigMap, apiVersion: v1, name: image-manifest }
   fieldref: { fieldpath: data.observatorium }
 - name: image_thanos
-  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  objref: { kind: ConfigMap, apiVersion: v1, name: image-manifest }
   fieldref: { fieldpath: data.thanos }
 - name: image_prometheus-config-reloader
-  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  objref: { kind: ConfigMap, apiVersion: v1, name: image-manifest }
   fieldref: { fieldpath: data.prometheus-config-reloader }
 - name: image_memcached_exporter
-  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  objref: { kind: ConfigMap, apiVersion: v1, name: image-manifest }
   fieldref: { fieldpath: data.memcached_exporter }
 - name: image_memcached
-  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  objref: { kind: ConfigMap, apiVersion: v1, name: image-manifest }
   fieldref: { fieldpath: data.memcached }
 - name: image_thanos_receive_controller
-  objref: { kind: ConfigMap, apiVersion: v1, name: mch-image-manifest }
+  objref: { kind: ConfigMap, apiVersion: v1, name: image-manifest }
   fieldref: { fieldpath: data.thanos_receive_controller }
 
 configurations:

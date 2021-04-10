@@ -1,0 +1,14 @@
+# If you prefer using RHACM images, get the configmap that matches your version of RHACM, for example:
+# $ oc get cm --namespace open-cluster-management mch-image-manifest-2.2.1 --output yaml
+# and replace the below image specs with the RHACM image specs.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: image-manifest
+data:
+  memcached: docker.io/memcached:1.6.3-alpine
+  memcached_exporter: docker.io/prom/memcached-exporter:v0.8.0
+  observatorium: quay.io/observatorium/observatorium:master-2021-03-29-v0.1.1-201-gd40a037
+  prometheus-config-reloader: registry.redhat.io/openshift4/ose-configmap-reloader@sha256:9d14b71e79e21f85c14ab88372536c737e22516de1a208e711f668bde89ce0cd
+  thanos: quay.io/thanos/thanos:main-2021-04-09-e3c3fee1
+  thanos_receive_controller: quay.io/observatorium/thanos-receive-controller:master-2021-03-26-7770963

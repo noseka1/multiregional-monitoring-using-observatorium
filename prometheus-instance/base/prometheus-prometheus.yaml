@@ -16,6 +16,9 @@ spec:
       certFile: /etc/prometheus/secrets/prometheus-client-certs/tls.crt
       keyFile: /etc/prometheus/secrets/prometheus-client-certs/tls.key
       #insecureSkipVerify: true
+  externalLabels:
+    # REPLACE_ME
+    region: us-east-1
   secrets:
   - prometheus-client-certs
   - observatorium-api-server-certs

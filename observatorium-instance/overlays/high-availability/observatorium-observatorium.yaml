@@ -1,0 +1,20 @@
+apiVersion: core.observatorium.io/v1alpha1
+kind: Observatorium
+metadata:
+  name: observatorium
+spec:
+  api:
+    replicas: 2
+  query:
+    replicas: 2
+  queryFrontend:
+    replicas: 2
+  receivers:
+    replicas: 3
+    replicationFactor: 3
+  rule:
+    replicas: 3
+  store:
+    cache:
+      replicas: 3
+    shards: 3

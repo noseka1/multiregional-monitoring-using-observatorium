@@ -60,8 +60,6 @@ $ oc apply --kustomize grafana-instance/base
 
 ## Further tips
 
-Note that the above commands create OpenShift route to unprotected services.
-
 For testing purposes, you can expose some of the endpoints:
 
 ```
@@ -77,6 +75,8 @@ Thanos Alerts Web UI (inactive, pending, firing alerts)
 ```
 $ oc expose svc observatorium-thanos-rule --port http
 ```
+
+Note that commands above create OpenShift routes which expose unprotected services to the outside of the cluster. If this is an issue, use `oc port-forward` instead.
 
 ## Related documentation
 

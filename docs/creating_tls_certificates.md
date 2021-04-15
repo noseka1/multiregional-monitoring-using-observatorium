@@ -6,7 +6,7 @@ Create root certificate + private key:
 $ openssl req -new -x509 -subj "/CN=root" -newkey rsa:4096 -nodes -extensions v3_ca -days 3650 -keyout root.key.pem -out root.crt.pem
 ```
 
-## Observatorium API
+## Observatorium API server certificate
 
 Create private key + CSR:
 
@@ -29,7 +29,7 @@ Create certificate:
 $ openssl x509 -req -in observatorium-api-observatorium.csr.pem -CA root.crt.pem -CAkey root.key.pem -CAcreateserial -extfile observatorium-api-observatorium.ext -days 3650 -out observatorium-api-observatorium.crt.pem
 ```
 
-## Prometheus
+## Prometheus client certificate
 
 Create private key + CSR:
 
@@ -52,7 +52,7 @@ Create certificate:
 $ openssl x509 -req -in prometheus-1.csr.pem -CA root.crt.pem -CAkey root.key.pem -CAcreateserial -extfile prometheus-1.ext -days 3650 -out prometheus-1.crt.pem
 ```
 
-## Grafana
+## Grafana client certificate
 
 (Same procedure as for Prometheus)
 

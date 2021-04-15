@@ -16,7 +16,7 @@ Create `observatorium` namespace. Everything else will be deployed into this nam
 $ oc apply --kustomize observatorium-namespace/base
 ```
 
-Deploy [MinIO](https://min.io/) S3 compatible object storage:
+Observatorium requires an S3-compatible storage. If you don't have an existing S3 storage, you can leverage [MinIO](https://min.io/). Deploy MinIO S3 compatible object storage:
 
 ```
 $ oc apply --kustomize minio/base

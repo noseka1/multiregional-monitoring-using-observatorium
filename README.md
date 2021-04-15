@@ -1,6 +1,9 @@
 # Scalable monitoring
 
-This repo is based on Observatorium Operator [deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
+## Related documentation
+
+* Observatorium Operator [deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
+* The Observatorium [architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
 
 ## Deploying
 
@@ -53,6 +56,8 @@ $ oc apply --kustomize grafana-instance/base
 
 ## Further tips
 
+Note that the above commands create OpenShift route to unprotected services.
+
 For testing purposes, you can expose some of the endpoints:
 
 ```
@@ -61,4 +66,10 @@ $ oc expose svc prometheus-operated
 
 ```
 $ oc expose svc observatorium-thanos-query --port http
+```
+
+Thanos Alerts Web UI (inactive, pending, firing alerts)
+
+```
+$ oc expose svc observatorium-thanos-rule --port http
 ```

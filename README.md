@@ -11,6 +11,8 @@ Components used:
 
 ## Deploying
 
+You will need TLS certificates for Observatorium API, Prometheus and Grafana. See [Creating TLS certificates](docs/creating_tls_certificates.md) for more details.
+
 Create `observatorium` namespace. Everything else will be deployed into this namespace:
 
 ```

@@ -1,12 +1,13 @@
 # Scalable monitoring
 
-## Related documentation
+## Overview
 
-* [Observatorium Operator deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
-* [Observatorium architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
-* [Introducing Thanos: Prometheus at scale](https://www.improbable.io/blog/thanos-prometheus-at-scale)
-* [Thanos documentation](https://thanos.io/tip/thanos/getting-started.md/)
-* [Prometheus documentation](https://prometheus.io/docs/introduction/overview/)
+This proof-of-concept (POC) deploys Observatorium + Prometheus + Grafana. See also the architecture diagrams [here](docs/diagrams).
+
+Components used:
+* [Observatorium](https://github.com/observatorium)
+* [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator)
+* [Grafana operator](https://github.com/integr8ly/grafana-operator)
 
 ## Deploying
 
@@ -76,3 +77,11 @@ Thanos Alerts Web UI (inactive, pending, firing alerts)
 ```
 $ oc expose svc observatorium-thanos-rule --port http
 ```
+
+## Related documentation
+
+* [Observatorium Operator deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
+* [Observatorium architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
+* [Introducing Thanos: Prometheus at scale](https://www.improbable.io/blog/thanos-prometheus-at-scale)
+* [Thanos documentation](https://thanos.io/tip/thanos/getting-started.md/)
+* [Prometheus documentation](https://prometheus.io/docs/introduction/overview/)

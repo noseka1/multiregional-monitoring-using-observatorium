@@ -1,4 +1,4 @@
-# Multi-cluster observability
+# Scalable monitoring
 
 This repo is based on Observatorium Operator [deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
 

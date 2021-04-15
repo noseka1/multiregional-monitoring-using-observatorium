@@ -3,7 +3,7 @@
 ## Related documentation
 
 * Observatorium Operator [deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
-* The Observatorium [architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
+* Observatorium [architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
 
 ## Deploying
 

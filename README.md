@@ -2,8 +2,11 @@
 
 ## Related documentation
 
-* Observatorium Operator [deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
-* Observatorium [architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
+* [Observatorium Operator deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md).
+* [Observatorium architecture diagram](https://github.com/observatorium/docs/blob/master/architecture/architecture.md).
+* [Introducing Thanos: Prometheus at scale](https://www.improbable.io/blog/thanos-prometheus-at-scale)
+* [Thanos documentation](https://thanos.io/tip/thanos/getting-started.md/)
+* [Prometheus documentation](https://prometheus.io/docs/introduction/overview/)
 
 ## Deploying
 

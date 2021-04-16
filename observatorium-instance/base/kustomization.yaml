@@ -49,4 +49,4 @@ vars:
   fieldref: { fieldpath: data.thanos_receive_controller }
 
 configurations:
-- kustomizeconfig/configuration.yaml
+- kustomizeconfig.yaml

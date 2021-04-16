@@ -20,4 +20,4 @@ resources:
 - observatoria.core.observatorium.io-crd.yaml
 
 configurations:
-- kustomizeconfig/configuration.yaml
+- kustomizeconfig.yaml

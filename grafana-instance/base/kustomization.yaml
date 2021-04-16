@@ -27,4 +27,4 @@ resources:
 - prometheus-grafanadashboard.yaml
 
 configurations:
-- kustomizeconfig/configuration.yaml
+- kustomizeconfig.yaml

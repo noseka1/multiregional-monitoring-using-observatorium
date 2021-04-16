@@ -25,4 +25,4 @@ resources:
 - prometheus-prometheus.yaml
 
 configurations:
-- kustomizeconfig/configuration.yaml
+- kustomizeconfig.yaml

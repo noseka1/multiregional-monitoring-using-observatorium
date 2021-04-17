@@ -5,7 +5,7 @@ metadata:
 spec:
   name: prometheus.yaml
   datasources:
-  - name: Prometheus
+  - name: prometheus
     type: prometheus
     access: proxy
     url: https://observatorium-observatorium-api.observatorium.svc.cluster.local:8080/api/metrics/v1/default

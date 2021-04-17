@@ -26,3 +26,9 @@ spec:
     name: prometheus-additional-scrape-configs
     key: prometheus-additional-scrape-configs.yaml
   logLevel: debug
+  storage:
+    volumeClaimTemplate:
+      spec:
+        resources:
+          requests:
+            storage: 10Gi

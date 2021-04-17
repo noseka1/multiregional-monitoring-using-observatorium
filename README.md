@@ -2,7 +2,7 @@
 
 ## Overview
 
-This proof-of-concept (POC) deploys Observatorium + Prometheus + Grafana. See also the architecture diagrams [here](docs/diagrams).
+This proof-of-concept (POC) deploys Observatorium + Prometheus + Grafana. See also [architecture diagrams](docs/diagrams).
 
 Components used:
 * [Observatorium](https://github.com/observatorium)

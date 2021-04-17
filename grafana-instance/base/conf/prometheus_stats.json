@@ -701,7 +701,7 @@
         "hide": 0,
         "includeAll": false,
         "label": null,
-        "multi": true,
+        "multi": false,
         "name": "DS_PROMETHEUS",
         "options": [],
         "query": "prometheus",

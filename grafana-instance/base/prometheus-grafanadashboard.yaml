@@ -8,4 +8,4 @@ spec:
   customFolderName: My Folder
   configMapRef:
     name: prometheus-stats-dashboard
-    key: prometheus_stats.json
+    key: prometheus_2_stats.json

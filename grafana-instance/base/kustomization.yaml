@@ -5,7 +5,7 @@ namespace: observatorium
 
 configMapGenerator:
 - files:
-  - prometheus_stats.json=conf/prometheus_stats.json
+  - prometheus_stats.json=conf/prometheus_2_stats.json
   name: prometheus-stats-dashboard
 
 vars:

@@ -9,7 +9,7 @@ spec:
     type: prometheus
     access: proxy
     url: https://observatorium-observatorium-api.observatorium.svc.cluster.local:8080/api/metrics/v1/default
-    isDefault: true
+    isDefault: false
     version: 1
     editable: true
     jsonData:

@@ -1,4 +1,4 @@
-# Scalable monitoring
+# Multi-regional monitoring using Observatorium
 
 ## Overview
 

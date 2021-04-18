@@ -1,5 +1,10 @@
 # Creating TLS certificates
 
+![Diagram](scalable_monitoring_certs.svg "Diagram")
+
+## Root CA certificate
+
+
 Create root certificate + private key:
 
 ```

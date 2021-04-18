@@ -11,7 +11,7 @@ Components used:
 
 ## Deploying
 
-You will need TLS certificates for Observatorium API, Prometheus and Grafana. See [Creating TLS certificates](docs/creating_tls_certificates.md) for more details on how to generate them.
+You will need TLS certificates for Observatorium API, Prometheus and Grafana. See [Creating TLS certificates](docs/creating_tls_certificates.md) for more details on how to generate them. Alternatively, Observatorium also supports [OIDC (OpenID Connect) for authentication](https://github.com/observatorium/deployments/tree/master/environments/local).
 
 Create `observatorium` namespace. Everything else will be deployed into this namespace:
 

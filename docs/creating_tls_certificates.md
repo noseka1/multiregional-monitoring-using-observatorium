@@ -1,6 +1,6 @@
 # Creating TLS certificates
 
-![Diagram](scalable_monitoring_certs.svg "Diagram")
+![Diagram](multiregional_monitoring_certs.svg "Diagram")
 
 ## Root CA certificate
 

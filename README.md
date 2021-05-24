@@ -82,6 +82,10 @@ Create route for Thanos Alerts Web UI (inactive, pending, firing alerts):
 $ oc expose svc observatorium-thanos-rule --port http
 ```
 
+## Video
+
+[![How to Build Multi-regional Monitoring Based on Prometheus](https://img.youtube.com/vi/0eycdxtgbpg/0.jpg)](http://www.youtube.com/watch?v=0eycdxtgbpg)
+
 ## Related documentation
 
 * [Observatorium Operator deployment documentation](https://github.com/observatorium/operator/blob/master/docs/deploy-operator.md)
